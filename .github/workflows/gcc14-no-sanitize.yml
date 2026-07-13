@@ -1,15 +1,10 @@
 name: gcc-14 no sanitizers
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   workflow_dispatch:
-
 jobs:
   gcc14-no-sanitize:
-    runs-on: ubuntu-24.04
+    runs-on: self-hosted
     strategy:
       matrix:
         cxxflags: ['"-O3 -std=c++23 -DRA_OPT_SMALL=0"',
